@@ -1,0 +1,13 @@
+:root {
+    --foreground-contrast: rgba(33, 34, 44, 1);
+    --foreground-contrast-tertiary: rgba(138, 143, 168, 1);
+    --line-contrast-fade: rgba(196, 199, 212, 1);
+    --background-contrast-fade: rgba(226, 227, 233, 1);
+    --background-contrast: rgba(54, 57, 73, 1);
+    --foreground-on-contrast: rgba(255, 255, 255, 1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
