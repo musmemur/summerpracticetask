@@ -1,28 +1,32 @@
-.modal-window-overlay{
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .modal-window-container {
-    background: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--foreground-on-contrast);
     box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.16);
     border-radius: 0.5rem;
     padding: 1rem 2rem 2rem 2rem;
     width: 40rem;
-    max-height: 90%;
 }
 
 .modal-window-top {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.modal-window-top button {
+    background: none;
+    border: none;
+    padding: 0;
+
+}
+
+.modal-window-top h1 {
+    font-weight: 700;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
 }
 
 .modal-window-middle form {
@@ -57,6 +61,11 @@
     align-items: flex-start;
 }
 
+.add-friend-form-button > label {
+    font-weight: 500;
+    cursor: pointer;
+}
+
 .modal-window-bottom {
     display: flex;
     gap: 1rem;
@@ -66,19 +75,21 @@
 .modal-window-bottom button {
     border-radius: 0.5rem;
     border: none;
-    padding: 0.375rem 0.625rem;
+    padding: 0.375rem 0.75rem;
+}
+
+.add-friend-form button {
+    margin-top: 0.5rem;
 }
 
 .back-button {
+    font-weight: 500;
     background: var(--background-contrast-fade);
     color: var(--foreground-contrast);
 }
 
 .next-button {
+    font-weight: 500;
     background: var(--background-contrast);
     color: var(--foreground-on-contrast);
-}
-
-.add-friend-form button {
-    margin-top: 0.5rem;
 }

@@ -7,11 +7,23 @@
     --foreground-on-contrast: rgba(255, 255, 255, 1);
 }
 
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    src: url('fonts/Inter_18pt-Regular.ttf') format('truetype');
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
+    font-family: 'Inter', serif;
 }
 
 button, select, option {
     cursor: pointer;
+}
+
+body {
+    background: rgba(0, 0, 0, 0.5);
 }

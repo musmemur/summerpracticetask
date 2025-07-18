@@ -43,76 +43,79 @@ export const ModalWindow = () => {
     }
 
     return (
-        <div className="modal-window-overlay">
-            <div className="modal-window-container">
-                <div className="modal-window-top">
-                    <h1>Заявка на регистрацию для мероприятия</h1>
+        <div className="modal-window-container">
+            <div className="modal-window-top">
+                <h1>Заявка на регистрацию для мероприятия</h1>
+                <button>
                     <CloseSign />
-                </div>
-                <div className="modal-window-middle">
-                    <form onSubmit={handleEventSubmit(addEvent)}>
-                        <div className="form-field">
-                            <label>Тип мероприятия *</label>
-                            <input type="text" placeholder="Выберете вид мероприятия"
-                                   {...registerEvent("eventType", {required: true,})}/>
-                        </div>
-                        <div className="form-field">
-                            <label>ФИО *</label>
-                            <input type="text" placeholder="Введите ФИО"
-                                   {...registerEvent("FIOEventOwner", {required: true,})}/>
-                        </div>
-                        <div className="form-field">
-                            <label>Имейл *</label>
-                            <input type="email" placeholder="Введите имейл"
-                                   {...registerEvent("emailEventOwner", {required: true,})}/>
-                        </div>
-                        <div className="form-field">
-                            <label>Номер телефона *</label>
-                            <input type="text" placeholder="+7 777 77 77"
-                                   {...registerEvent("phoneEventOwner", {required: true,})}/>
-                        </div>
-                        {friends.length < 3 && (
-                            <button className="add-friend-form-button" onClick={showAddFriendForm}>
-                                <AddFriendSign/>
-                                <label>Добавить друга</label>
-                            </button>
-                        )}
-                        <div>
-                            Количество друзей: {friends.length}
-                        </div>
-                        {isShowAddFriendForm && (
-                            <div className="add-friend-form">
-                                <div className="form-field">
-                                    <label>ФИО *</label>
-                                    <input type="text" placeholder="Введите ФИО"
-                                           {...registerFriend("FIO", {required: true,})}/>
-                                </div>
-                                <div className="form-field">
-                                    <label>Имейл *</label>
-                                    <input type="email" placeholder="Введите имейл"
-                                           {...registerFriend("Email", {required: true,})}/>
-                                </div>
-                                <div className="form-field">
-                                    <label>Номер телефона *</label>
-                                    <input type="text" placeholder="+7 777 77 77"
-                                           {...registerFriend("Phone", {required: true,})}/>
-                                </div>
-                                <button type="button" onClick={handleFriendSubmit(addFriend)}>Добавить друга</button>
+                </button>
+            </div>
+            <div className="modal-window-middle">
+                <form onSubmit={handleEventSubmit(addEvent)}>
+                    <div className="form-field">
+                        <label>Тип мероприятия *</label>
+                        <input type="text" placeholder="Выберете вид мероприятия"
+                               {...registerEvent("eventType", {required: true,})}/>
+                    </div>
+                    <div className="form-field">
+                        <label>ФИО *</label>
+                        <input type="text" placeholder="Введите ФИО"
+                               {...registerEvent("FIOEventOwner", {required: true,})}/>
+                    </div>
+                    <div className="form-field">
+                        <label>Имейл *</label>
+                        <input type="email" placeholder="Введите имейл"
+                               {...registerEvent("emailEventOwner", {required: true,})}/>
+                    </div>
+                    <div className="form-field">
+                        <label>Номер телефона *</label>
+                        <input type="text" placeholder="+7 777 77 77"
+                               {...registerEvent("phoneEventOwner", {required: true,})}/>
+                    </div>
+                    {friends.length < 3 && (
+                        <button className="add-friend-form-button" onClick={showAddFriendForm}>
+                            <AddFriendSign/>
+                            <label>Добавить друга</label>
+                        </button>
+                    )}
+                    <div>
+                        Количество друзей: {friends.length}
+                    </div>
+                    {isShowAddFriendForm && (
+                        <div className="add-friend-form">
+                            <div className="form-field">
+                                <label>ФИО *</label>
+                                <input type="text" placeholder="Введите ФИО"
+                                       {...registerFriend("FIO", {required: true,})}/>
                             </div>
-                        )}
-                        <div className="form-field">
-                            <label>Предпочитаемый вид связи *</label>
-                            <select {...registerEvent("connectionType", {required: true,})}>
-                                <option value="phone">Номер телефона</option>
-                                <option value="email">Имейл</option>
-                            </select>
+                            <div className="form-field">
+                                <label>Имейл *</label>
+                                <input type="email" placeholder="Введите имейл"
+                                       {...registerFriend("Email", {required: true,})}/>
+                            </div>
+                            <div className="form-field">
+                                <label>Номер телефона *</label>
+                                <input type="text" placeholder="+7 777 77 77"
+                                       {...registerFriend("Phone", {required: true,})}/>
+                            </div>
+                            <button type="button" onClick={handleFriendSubmit(addFriend)}>
+                                Добавить друга
+                            </button>
                         </div>
-                    </form>
-                </div>
-                <div className="modal-window-bottom">
-                    <button className="back-button">Назад</button>
-                    <button className="next-button" onClick={handleEventSubmit(addEvent)}>Дальше</button>
-                </div>
+                    )}
+                    <div className="form-field">
+                        <label>Предпочитаемый вид связи *</label>
+                        <select {...registerEvent("connectionType", {required: true,})}>
+                            <option value="" disabled selected hidden>Выберите вид связи</option>
+                            <option value="phone">Номер телефона</option>
+                            <option value="email">Имейл</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div className="modal-window-bottom">
+                <button className="back-button">Назад</button>
+                <button className="next-button" onClick={handleEventSubmit(addEvent)}>Дальше</button>
             </div>
         </div>
     )
