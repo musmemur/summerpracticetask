@@ -78,3 +78,7 @@
     background: var(--background-contrast);
     color: var(--foreground-on-contrast);
 }
+
+.add-friend-form button {
+    margin-top: 0.5rem;
+}
